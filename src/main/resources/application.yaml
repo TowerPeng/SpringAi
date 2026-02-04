@@ -1,5 +1,7 @@
 spring:
   ai:
+    dashscope:
+      api-key: sk-4b474e3fa15947f9a5d3a7873eb64f1e
     deepseek:
       api-key: sk-38bd6e73622b43ec8e61c68616269d2b
       chat:
@@ -11,3 +13,6 @@ spring:
             - "。"    #只想一句话
             - "政治"  #敏感词
             - "最后最总结一下"  #这种AI惯用的模板词， 减少AI词汇， 让文章更拟人
+logging:
+  level:
+    org.springframework.ai.chat.client.advisor: debug
