@@ -1,5 +1,16 @@
 spring:
+  datasource:
+    username: ycloud_uat
+    password: Wy_123456
+    url: jdbc:mysql://rm-bp1yx097q013741nlko.mysql.rds.aliyuncs.com/vip_desktop_user?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useSSL=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
   ai:
+    chat:
+      memory:
+        repository:
+          jdbc:
+            schema: classpath:/schema-mysql.sql
+            initialize-schema: ALWAYS
     dashscope:
       api-key: sk-4b474e3fa15947f9a5d3a7873eb64f1e
     deepseek:
@@ -13,6 +24,6 @@ spring:
             - "。"    #只想一句话
             - "政治"  #敏感词
             - "最后最总结一下"  #这种AI惯用的模板词， 减少AI词汇， 让文章更拟人
-logging:
-  level:
-    org.springframework.ai.chat.client.advisor: debug
+#logging:
+#  level:
+#    org.springframework.ai.chat.client.advisor: debug
