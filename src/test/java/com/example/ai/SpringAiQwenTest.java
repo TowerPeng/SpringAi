@@ -1,14 +1,11 @@
-package com.example.demo;
+package com.example.ai;
 
 import com.alibaba.cloud.ai.dashscope.audio.DashScopeAudioTranscriptionModel;
 import com.alibaba.cloud.ai.dashscope.audio.DashScopeAudioTranscriptionOptions;
-import com.alibaba.cloud.ai.dashscope.audio.synthesis.SpeechSynthesisPrompt;
-import com.alibaba.cloud.ai.dashscope.audio.synthesis.SpeechSynthesisResponse;
 import com.alibaba.cloud.ai.dashscope.chat.DashScopeChatModel;
 import com.alibaba.cloud.ai.dashscope.chat.DashScopeChatOptions;
 import com.alibaba.cloud.ai.dashscope.image.DashScopeImageModel;
 import com.alibaba.cloud.ai.dashscope.image.DashScopeImageOptions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.ai.audio.transcription.AudioTranscriptionPrompt;
@@ -27,21 +24,15 @@ import org.springframework.ai.chat.prompt.Prompt;
 import org.springframework.ai.content.Media;
 import org.springframework.ai.image.ImagePrompt;
 import org.springframework.ai.image.ImageResponse;
-import org.springframework.ai.template.st.StTemplateRenderer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.util.MimeTypeUtils;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.net.MalformedURLException;
-import java.nio.ByteBuffer;
 import java.util.List;
 
 /**
@@ -274,7 +265,7 @@ public class SpringAiQwenTest {
     @Test
     public void testChatOptions1() {
         String content = chatClient.prompt()
-                .user("你好，我叫彭涛！")
+                .user("你好，我叫徐庶！")
                 .advisors(advisorSpec -> advisorSpec.param(ChatMemory.CONVERSATION_ID,"1"))
                 .call()
                 .content();
@@ -282,7 +273,7 @@ public class SpringAiQwenTest {
         System.out.println("--------------------------------------------------------------------------");
 
         content = chatClient.prompt()
-                .user("我叫彭涛")
+                .user("我叫什么")
                 .advisors(advisorSpec -> advisorSpec.param(ChatMemory.CONVERSATION_ID,"1"))
                 .call()
                 .content();

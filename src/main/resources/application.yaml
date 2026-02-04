@@ -5,6 +5,12 @@ spring:
     url: jdbc:mysql://rm-bp1yx097q013741nlko.mysql.rds.aliyuncs.com/vip_desktop_user?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useSSL=true
     driver-class-name: com.mysql.cj.jdbc.Driver
   ai:
+    memory:
+      redis:
+        host: r-bp1me5k3vfzq8gwbd6pd.redis.rds.aliyuncs.com
+        port: 6379
+        password: WEchat2021
+        timeout:  5000
     chat:
       memory:
         repository:
